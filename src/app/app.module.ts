@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { StoreComponent } from './store/store.component';
 import { StoreDetailComponent } from './store-detail/store-detail.component';
 import { HighlightDirective } from './highlight.directive';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     StoreComponent,
     StoreDetailComponent,
-    HighlightDirective
+    HighlightDirective,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
