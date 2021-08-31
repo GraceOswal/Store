@@ -1,13 +1,20 @@
 <div>
     <h1> My Store</h1>
     <hr>
-    <ul>
-        <div *ngFor='let store of stores; let i = index'>
-            <li appHighlight>{{store.customer_id}} Manufactured on: {{store.productDate|date|lowercase}}</li>
-            <button (click)='toggleDetails(i)'> Products</button>
-            <app-store-detail *ngIf='store.showDescription' [store]='store' (isPick)='pickStore($event,i)'>
-            </app-store-detail>
+    <div class="row">
+        <div class="col-md-6">
+            <div *ngFor='let store of stores; let i = index'>
+                <div>
+                    <h4 id={{i}} appHighlight>{{store.customer_id}} Expires on: {{store.productDate|date|lowercase}}</h4>
+                    <button (click)='toggleDetails(i)' class="btn btn-primary"> Product</button>
+
+                    <div *ngIf='store.showDescription'>
+                        <button (click)='store' (isPick)=' pickStore($event,i) '> Pick </button>
+
+                        <app-store-detail [store]='store ' (isPick)='deleteStore($event,i) '></app-store-detail>
+                    </div>
+
+                    <p *ngIf=' stores.length>6'> Too many products</p>
+                </div>
+            </div>
         </div>
-    </ul>
-    <p *ngIf='stores.length>6'> Too many products</p>
-</div>

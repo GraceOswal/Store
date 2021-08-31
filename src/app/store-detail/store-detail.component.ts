@@ -15,6 +15,10 @@ export class StoreDetailComponent implements OnInit {
     this.isPick.emit(pick);
   }
 
+  storeDelete(pick:boolean){
+    this.isPick.emit(pick);
+  }
+
   constructor() { }
 
   ngOnInit(): void {

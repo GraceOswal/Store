@@ -27,6 +27,15 @@ export class StoreComponent implements OnInit {
     }
   }
 
+  deleteStore(isPick: any, index: number){
+    if (isPick) {
+      let toDelete = confirm (`Are you sure you want to remove ${this.stores[index].product}?`)
+
+      if (toDelete){
+        this.stores.splice(index,1)
+      }
+    }
+  }
   constructor() { }
 
   ngOnInit(): void {

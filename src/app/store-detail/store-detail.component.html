@@ -1,5 +1,6 @@
 <p>
     {{store.product}}
 </p>
-<button (click)='storePick(true)'> Pick </button>
-<p>This product was manufactured in: {{store.productDate|dateCount}} </p>
+
+<p>This product will expire in: {{store.productDate|dateCount}} </p>
+<button (click)='storeDelete(true)' class="btn btn-outline-danger">Remove product</button>
