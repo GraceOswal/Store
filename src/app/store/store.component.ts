@@ -21,6 +21,12 @@ export class StoreComponent implements OnInit {
     this.stores[index].showDescription=!this.stores[index].showDescription;
   }
 
+  pickStore(isPick: any, index: number){
+    if (isPick){
+      this.stores.splice(index,1);
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
