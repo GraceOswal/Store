@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Store } from '../store';
 
 @Component({
@@ -9,6 +9,11 @@ import { Store } from '../store';
 export class StoreDetailComponent implements OnInit {
   @Input()
   store!: Store;
+  @Output() isPick = new EventEmitter<boolean>();
+
+  storePick(pick:boolean){
+    this.isPick.emit(pick);
+  }
 
   constructor() { }
 
