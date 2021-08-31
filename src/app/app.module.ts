@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreComponent } from './store/store.component';
 import { StoreDetailComponent } from './store-detail/store-detail.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     StoreComponent,
-    StoreDetailComponent
+    StoreDetailComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
