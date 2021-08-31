@@ -3,7 +3,7 @@
     <hr>
     <ul>
         <div *ngFor='let store of stores; let i = index'>
-            <li appHighlight>{{store.customer_id}}</li>
+            <li appHighlight>{{store.customer_id}} Manufactured on: {{store.productDate|date|currency}}</li>
             <button (click)='toggleDetails(i)'> Products</button>
             <app-store-detail *ngIf='store.showDescription' [store]='store' (isPick)='pickStore($event,i)'>
             </app-store-detail>
