@@ -1,6 +1,10 @@
 export class Store {
-  customer_id: string;
-  product: string;
-  quantity: string;
-  price: string;
+showDescription:boolean;
+constructor(
+  public customer_id: string,
+  public product: string,
+  public quantity: string,
+  public price: string){
+    this.showDescription=false;
+  }
 }

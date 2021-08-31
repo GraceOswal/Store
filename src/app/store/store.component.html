@@ -4,7 +4,7 @@
     <ul>
         <li *ngFor='let store of stores'>
             {{store.customer_id}}
-
+            <app-store-detail [store]='store'></app-store-detail>
         </li>
     </ul>
 
