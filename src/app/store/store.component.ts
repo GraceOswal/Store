@@ -17,6 +17,10 @@ export class StoreComponent implements OnInit {
 
   ];
 
+  toggleDetails(index:any){
+    this.stores[index].showDescription=!this.stores[index].showDescription;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

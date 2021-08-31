@@ -2,10 +2,12 @@
     <h1> My Store</h1>
     <hr>
     <ul>
-        <li *ngFor='let store of stores'>
-            {{store.customer_id}}
-            <app-store-detail [store]='store'></app-store-detail>
-        </li>
+        <div *ngFor='let store of stores; let i = index'>
+            <li>{{store.customer_id}}</li>
+            <button (click)='toggleDetails(i)'> Products</button>
+            <app-store-detail *ngIf='store.showDescription' [store]='store'>
+            </app-store-detail>
+        </div>
     </ul>
 
 </div>
