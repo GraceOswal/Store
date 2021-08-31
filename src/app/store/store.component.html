@@ -13,8 +13,12 @@
 
                         <app-store-detail [store]='store ' (isPick)='deleteStore($event,i) '></app-store-detail>
                     </div>
-
-                    <p *ngIf=' stores.length>6'> Too many products</p>
                 </div>
             </div>
+            <div class="col-md-6">
+                <app-store-form></app-store-form>
+            </div>
+            <p *ngIf=' stores.length>6'> Too many products</p>
         </div>
+    </div>
+</div>
