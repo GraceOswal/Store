@@ -5,6 +5,7 @@ constructor(
   public product: string,
   public quantity: string,
   public price: string){
+
     this.showDescription=false;
   }
 }

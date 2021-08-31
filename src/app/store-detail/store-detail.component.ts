@@ -7,7 +7,8 @@ import { Store } from '../store';
   styleUrls: ['./store-detail.component.css']
 })
 export class StoreDetailComponent implements OnInit {
-  @Input () store:Store;
+  @Input()
+  store!: Store;
 
   constructor() { }
 
