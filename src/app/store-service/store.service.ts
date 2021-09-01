@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Store } from '../store';
-import { Stores } from '../storeList';
+import { Stores } from '../stores';
+
+
 
 
 @Injectable({
@@ -10,14 +11,16 @@ export class StoreService {
 
 
   getStores(){
-    return Store
+    return Stores
   }
+
   getStore(customer_id: any){
-    for (let store of Stores)
-    if (store.customer_id==customer_id){
+    for (let store of Stores){
       return store;
+      
     }
   }
 
   constructor() { }
 }
+

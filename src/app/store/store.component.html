@@ -12,7 +12,7 @@
                     <div *ngIf='store.showDescription'>
                         <button (click)='store' (isPick)=' pickStore($event,i) '> Pick </button>
 
-                        <app-store-detail [store]='store ' (isPick)='deleteStore($event,i) '></app-store-detail>
+                        <app-store-detail></app-store-detail>
                     </div>
                 </div>
             </div>

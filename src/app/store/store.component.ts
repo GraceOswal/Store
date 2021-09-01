@@ -27,8 +27,7 @@ alertService:AlertService;
 
   toggleDetails(index:any){
     this.stores[index].showDescription=!this.stores[index].showDescription;
-  }
-
+  } 
   pickStore(isPick: any, index: number){
     if (isPick){
       this.stores.splice(index,1);

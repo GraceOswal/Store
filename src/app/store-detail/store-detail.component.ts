@@ -9,27 +9,15 @@ import { StoreService } from '../store-service/store.service';
   styleUrls: ['./store-detail.component.css']
 })
 export class StoreDetailComponent implements OnInit {
-  @Input()
+
   store!: Store;
-  @Output() isPick = new EventEmitter<boolean>();
-  Stores: Store | undefined;
-
-  storePick(pick:boolean){
-    this.isPick.emit(pick);
-  }
-
-  storeDelete(pick:boolean){
-    this.isPick.emit(pick);
-  }
-
-  constructor(
-    private route: ActivatedRoute,
-    private service: StoreService
-  ) { }
+ 
+  constructor(private route:ActivatedRoute,
+    private service:StoreService) { }
 
   ngOnInit() {
-    let customer_id = this.route.snapshot.paramMap.get('customer_id');
-    this.Stores = this.service.getStore(customer_id)
+      let customer_id = this.route.snapshot.paramMap.get('customer_id');
+      this.store = this.service.getStore(customer_id)
   }
 
 }
