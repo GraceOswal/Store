@@ -16,9 +16,19 @@ import { QuoteRequestService } from '../quote-http/quote-request.service';
 export class StoreComponent implements OnInit {
 
    stores!: Store[];
+   constructor(
+    storeService:StoreService,
+    alertService:AlertService,
+    private quoteService:QuoteRequestService,
+    private router:Router
+    ){
+  this.stores = storeService.getStores()
+  this.alertService = alertService;
+}
+
 alertService:AlertService;
   quote!: Quote;
-
+ 
 
   goToUrl(customer_id: any){
     this.router.navigate(['/stores',customer_id])
@@ -45,16 +55,7 @@ alertService:AlertService;
     }
   }
 
-  constructor(
-    storeService:StoreService,
-    alertService:AlertService,
-    private quoteService:QuoteRequestService,
-    private router:Router
-    ){
-  this.stores = storeService.getStores()
-  this.alertService = alertService;
-}
-
+  
   ngOnInit() {
  this.quoteService.quoteRequest()
     this.quote = this.quoteService.quote

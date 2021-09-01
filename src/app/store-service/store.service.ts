@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Stores } from '../stores';
+import { Store } from '../store';
+import { Stores } from '../storeList';
 
 
 
@@ -8,16 +9,16 @@ import { Stores } from '../stores';
   providedIn: 'root'
 })
 export class StoreService {
+  
 
 
   getStores(){
     return Stores
   }
 
-  getStore(customer_id: any){
+ getStore(customer_id: string){
     for (let store of Stores){
-      return store;
-      
+      if (store.customer_id == customer_id){}
     }
   }
 
