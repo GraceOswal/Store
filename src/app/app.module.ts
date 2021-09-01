@@ -12,6 +12,7 @@ import { StoreDetailComponent } from './store-detail/store-detail.component';
 import { HighlightDirective } from './highlight.directive';
 import { DateCountPipe } from './date-count.pipe';
 import { StoreFormComponent } from './store-form/store-form.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StoreFormComponent } from './store-form/store-form.component';
     StoreDetailComponent,
     HighlightDirective,
     DateCountPipe,
-    StoreFormComponent
+    StoreFormComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
