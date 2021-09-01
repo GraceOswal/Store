@@ -20,6 +20,11 @@
                     <app-store-form></app-store-form>
                 </div>
                 <p *ngIf=' stores.length>6'> Too many products</p>
+                <div class="row">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0">{{quote.quote}}</p>
+                        <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
+                    </blockquote>
+                </div>
             </div>
         </div>
-    </div>

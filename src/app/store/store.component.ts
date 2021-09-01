@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Store } from '../store';
+import { Quote} from '../quote-class/quote';
 import { StoreService } from '../store-service/store.service';
 import { AlertService } from '../alert-service/alert.service';
 
@@ -12,9 +14,7 @@ export class StoreComponent implements OnInit {
 
 stores:Store[];
 alertService:AlertService;
-
-
-
+  quote!: Quote;;
 
   toggleDetails(index:any){
     this.stores[index].showDescription=!this.stores[index].showDescription;
@@ -38,13 +38,22 @@ alertService:AlertService;
 
   constructor(
     storeService:StoreService,
-    alertService:AlertService
+    alertService:AlertService,
+    private http: HttpClient
     ){
   this.stores = storeService.getStores()
   this.alertService = alertService;
 }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    interface ApiResponse{
+      author:string;
+      quote:string;
+    }
+    this.http.get<ApiResponse>("https://graceoswal.github.io/Quotes").subscribe(data=>{
+      //Successful API request
+      this.quote=new Quote (data.author,data.quote)
+    })
   }
 
 }
