@@ -14,6 +14,7 @@ import { DateCountPipe } from './date-count.pipe';
 import { StoreFormComponent } from './store-form/store-form.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     DateCountPipe,
     StoreFormComponent,
     AboutusComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
