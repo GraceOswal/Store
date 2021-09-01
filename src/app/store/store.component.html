@@ -1,8 +1,8 @@
-<div>
+<div class="container">
     <h1> My Store</h1>
     <hr>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div *ngFor='let store of stores; let i = index'>
                 <div>
                     <h4 id={{i}} appHighlight>{{store.customer_id}} Expires on: {{store.productDate|date|lowercase}}</h4>
@@ -15,10 +15,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <app-store-form></app-store-form>
+            <div class="row">
+                <div class=" col-md-9">
+                    <app-store-form></app-store-form>
+                </div>
+                <p *ngIf=' stores.length>6'> Too many products</p>
             </div>
-            <p *ngIf=' stores.length>6'> Too many products</p>
         </div>
     </div>
-</div>
