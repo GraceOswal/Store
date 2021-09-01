@@ -7,7 +7,7 @@
             <div *ngFor='let store of stores; let i = index'>
                 <div>
                     <h4 id={{i}} appHighlight>{{store.customer_id}} Expires on: {{store.productDate|date|lowercase}}</h4>
-                    <button (click)='toggleDetails(i)' class="btn btn-primary"> Product</button>
+                    <button class="btn btn-primary" (click)='goToUrl(store.customer_id)'>View Product</button>
 
                     <div *ngIf='store.showDescription'>
                         <button (click)='store' (isPick)=' pickStore($event,i) '> Pick </button>

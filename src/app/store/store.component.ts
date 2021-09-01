@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Store } from '../store';
 import { Quote} from '../quote-class/quote';
 import { StoreService } from '../store-service/store.service';
@@ -12,6 +13,10 @@ import { QuoteRequestService } from '../quote-http/quote-request.service';
   styleUrls: ['./store.component.css']
 })
 export class StoreComponent implements OnInit {
+
+  goToUrl(customer_id: any){
+    this.router.navigate(['/stores',customer_id])
+  }
 
 
 stores:Store[];
@@ -34,6 +39,7 @@ alertService:AlertService;
 
       if (toDelete){
         this.stores.splice(index,1)
+        this.alertService.alertMe( "You have removed a product")
       }
     }
   }
@@ -41,7 +47,8 @@ alertService:AlertService;
   constructor(
     storeService:StoreService,
     alertService:AlertService,
-    private quoteService:QuoteRequestService
+    private quoteService:QuoteRequestService,
+    private router:Router
     ){
   this.stores = storeService.getStores()
   this.alertService = alertService;
@@ -50,5 +57,5 @@ alertService:AlertService;
   ngOnInit() {
  this.quoteService.quoteRequest()
     this.quote = this.quoteService.quote
-  }  
-}  
+  }
+}
