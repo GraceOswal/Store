@@ -4,6 +4,7 @@ import { Store } from '../store';
 import { Quote} from '../quote-class/quote';
 import { StoreService } from '../store-service/store.service';
 import { AlertService } from '../alert-service/alert.service';
+import { QuoteRequestService } from '../quote-http/quote-request.service';
 
 @Component({
   selector: 'app-store',
@@ -40,24 +41,14 @@ alertService:AlertService;
   constructor(
     storeService:StoreService,
     alertService:AlertService,
-    private http: HttpClient
+    private quoteService:QuoteRequestService
     ){
   this.stores = storeService.getStores()
   this.alertService = alertService;
 }
 
   ngOnInit() {
-    interface ApiResponse{
-      author:string;
-      quote:string;
-    }
-    this.http.get<ApiResponse>("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").subscribe(data=>{
-      //Successful API request
-      this.quote=new Quote (data.author,data.quote)
-  },(_err)=>{
-  this.quote = new Quote(" Grace Graca","Don't mess up!")
-  console.log("An Error occured")
-
-    })
-  }
-}
+ this.quoteService.quoteRequest()
+    this.quote = this.quoteService.quote
+  }  
+}  
