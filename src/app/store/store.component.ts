@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '../store';
 import { StoreService } from '../store-service/store.service';
+import { AlertService } from '../alert-service/alert.service';
 
 @Component({
   selector: 'app-store',
@@ -8,11 +9,11 @@ import { StoreService } from '../store-service/store.service';
   styleUrls: ['./store.component.css']
 })
 export class StoreComponent implements OnInit {
-stores:Store[];
 
-constructor(storeService:StoreService){
-  this.stores = storeService.getStores()
-}
+stores:Store[];
+alertService:AlertService;
+
+
 
 
   toggleDetails(index:any){
@@ -34,7 +35,14 @@ constructor(storeService:StoreService){
       }
     }
   }
- 
+
+  constructor(
+    storeService:StoreService,
+    alertService:AlertService
+    ){
+  this.stores = storeService.getStores()
+  this.alertService = alertService;
+}
 
   ngOnInit(): void {
   }
