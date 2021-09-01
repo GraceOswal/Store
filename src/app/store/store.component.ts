@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '../store';
+import { StoreService } from '../store-service/store.service';
+
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.css']
 })
 export class StoreComponent implements OnInit {
+stores:Store[];
 
+constructor(storeService:StoreService){
+  this.stores = storeService.getStores()
+}
 
 
   toggleDetails(index:any){
@@ -27,7 +34,7 @@ export class StoreComponent implements OnInit {
       }
     }
   }
-  constructor() { }
+ 
 
   ngOnInit(): void {
   }
