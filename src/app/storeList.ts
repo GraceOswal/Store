@@ -1,5 +1,5 @@
  import { Store} from './store';
- export let stores:Store[] = [
+ export let Stores:Store[] = [
     new Store( '#20010', 'juice','1 litre', 'Ksh 122', new Date(2021,4,5)),
      new Store( '#20013' , 'Salted Crisps', '50g','Ksh 30', new Date (2022,4,4)),
      new Store('#20016', 'Brookside', '500ml', 'Ksh 499',new Date(2021,5,8)),

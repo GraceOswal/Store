@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Stores } from '../storeList';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StoreService {
+export class AlertService {
 
-  getStores(){
-    return Stores
+  alertMe (message:string){
+    alert(message)
   }
 
   constructor() { }
