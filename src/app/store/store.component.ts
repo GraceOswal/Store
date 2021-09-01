@@ -12,6 +12,7 @@ import { AlertService } from '../alert-service/alert.service';
 })
 export class StoreComponent implements OnInit {
 
+
 stores:Store[];
 alertService:AlertService;
   quote!: Quote;;
@@ -53,7 +54,10 @@ alertService:AlertService;
     this.http.get<ApiResponse>("https://graceoswal.github.io/Quotes").subscribe(data=>{
       //Successful API request
       this.quote=new Quote (data.author,data.quote)
+  },err=>{
+  this.quote = new Quote(" Grace Graca","Don't mess up!")
+  console.log("An Error occured")
+
     })
   }
-
 }
