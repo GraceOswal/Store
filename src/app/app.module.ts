@@ -13,6 +13,7 @@ import { HighlightDirective } from './highlight.directive';
 import { DateCountPipe } from './date-count.pipe';
 import { StoreFormComponent } from './store-form/store-form.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     HighlightDirective,
     DateCountPipe,
     StoreFormComponent,
-    AboutusComponent
+    AboutusComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
