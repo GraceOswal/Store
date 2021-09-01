@@ -51,10 +51,10 @@ alertService:AlertService;
       author:string;
       quote:string;
     }
-    this.http.get<ApiResponse>("https://graceoswal.github.io/Quotes").subscribe(data=>{
+    this.http.get<ApiResponse>("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").subscribe(data=>{
       //Successful API request
       this.quote=new Quote (data.author,data.quote)
-  },err=>{
+  },(_err)=>{
   this.quote = new Quote(" Grace Graca","Don't mess up!")
   console.log("An Error occured")
 
