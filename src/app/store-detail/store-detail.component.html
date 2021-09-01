@@ -1,6 +1,17 @@
-<p>
-    {{store.product}}
-</p>
+<div class="row">
+    <div class="col-md-2">
 
-<p>This product will expire in: {{store.productDate|dateCount}} </p>
-<button (click)='storeDelete(true)' class="btn btn-outline-danger">Remove product</button>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{store.product}} </h5>
+
+                <p class="card-text">This product will expire in: {{store.productDate|dateCount}} </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>

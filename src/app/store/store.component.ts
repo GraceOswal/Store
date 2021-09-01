@@ -7,6 +7,7 @@ import { StoreService } from '../store-service/store.service';
 import { AlertService } from '../alert-service/alert.service';
 import { QuoteRequestService } from '../quote-http/quote-request.service';
 
+
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -14,14 +15,15 @@ import { QuoteRequestService } from '../quote-http/quote-request.service';
 })
 export class StoreComponent implements OnInit {
 
+   stores!: Store[];
+alertService:AlertService;
+  quote!: Quote;
+
+
   goToUrl(customer_id: any){
     this.router.navigate(['/stores',customer_id])
   }
 
-
-stores:Store[];
-alertService:AlertService;
-  quote!: Quote;;
 
   toggleDetails(index:any){
     this.stores[index].showDescription=!this.stores[index].showDescription;
