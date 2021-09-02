@@ -2,25 +2,52 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
-## Development server
+## Author
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[Grace Osswal] (<https://GraceOswal.github.io/Store/>>)
 
-## Code scaffolding
+## Description
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The Store Project is created using Angular/Cli. based on customers viewing their products with an option of delete and also subscribing.
 
-## Build
+## Live Page
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<https://GraceOswal.github.io/Store/>
 
-## Running unit tests
+local host <http://localhost:4200/>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation Process
 
-## Running end-to-end tests
+> Go to your terminal {Ctrl+Alt+T}- this will open terminal window.
+>git clone url - [```https://github.com/GraceOswal/Store.git```].
+>cd Quotes/
+>You can start coding with your preferred text editor.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Technologies
+
+>Html-css-javascript
+>Bootstrap3
+>json
+>angular/cli
+>typescript
+
+## Confirmed Bugs
+
+View Products not showing after debug
+
+## Collaboration
+
+For collaborations kindly reach out to me via email or phone number
+email [grace.osswal@student.moringaschool.com]
+contact [ +254 716488695]
+
+## License
+
+MIT License
+
+<https://github.com/GraceOswal/Store/blob/main/LICENSE>
+
+_Copyright (c) 2021_ **Grace Oswal**
 
 ## Further help
 
