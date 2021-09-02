@@ -9,23 +9,20 @@
                     <h4 id={{i}} appHighlight>{{store.customer_id}} Expires on: {{store.productDate|date|lowercase}}</h4>
                     <button class="btn btn-primary" (click)='goToUrl(store.customer_id)'>View Product</button>
 
-                    <div *ngIf='store.showDescription'>
-                        <button (click)='store' (isPick)=' pickStore($event,i) '> Pick </button>
-
-                        <app-store-detail></app-store-detail>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class=" col-md-9">
-                    <app-store-form></app-store-form>
-                </div>
-                <p *ngIf=' stores.length>6'> Too many products</p>
-                <div class="row">
-                    <blockquote class="blockquote text-center">
-                        <p class="mb-0">{{quote.quote}}</p>
-                        <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
-                    </blockquote>
+                    <app-store-detail></app-store-detail>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class=" col-md-9">
+                <app-store-form></app-store-form>
+            </div>
+            <p *ngIf=' stores.length>6'> Too many products</p>
+            <div class="row">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">{{quote.quote}}</p>
+                    <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>

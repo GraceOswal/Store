@@ -10,12 +10,17 @@ import { Stores } from '../storeList';
   styleUrls: ['./store-detail.component.css']
 })
 export class StoreDetailComponent implements OnInit {
+  
 
   store!: Store;
   Store: any;
- 
+  isPick: any;
+
+  storeDelete(pick: boolean){
+    this.isPick.emit (pick)
+  }
   constructor(public route:ActivatedRoute,
-    private service:StoreService) { }
+    public service:StoreService) { }
 
   ngOnInit() {
       let customer_id = this.route.snapshot.paramMap.get('customer_id');
